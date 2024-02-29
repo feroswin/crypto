@@ -1,37 +1,36 @@
 function main(){
-    let shtrih= prompt("Введите штрих код 13 цифр:")
-    if(shtrih.length!=13){
+    let code= prompt("Введите штрих код 13 цифр:")
+    if(code.length !== 13){
         console.log("Вы ввели данные не так")
         return;
     }
-    let shtrihArr = shtrih.split("");
-    let sumnch=0;
-    let cd
+    let codeArr = code.split("");
+    let sumOdd= 0;
+    let controlNum
 
-    shtrihArr.forEach((el,index) => {
-        if((index+1)%2!=0&&index < shtrihArr.length - 1){
-            sumnch+=parseInt(el)
-
+    codeArr.forEach((el,index) => {
+        if((index + 1) % 2 !== 0 && index < codeArr.length - 1){
+            sumOdd += parseInt(el)
         }
         else{
-            cd=parseInt(el)
+            controlNum=parseInt(el)
         }
     });
-    console.log("Сумма нечетных "+sumnch)
-    console.log("Контрольная цифра "+cd)
+    console.log("Сумма нечетных ", sumOdd)
+    console.log("Контрольная цифра ", controlNum)
 
-    let sumch=0
+    let sumEven=0
 
-    shtrihArr.forEach((el,index) => {
-        if((index+1)%2==0){
-            sumch+=parseInt(3*el)
+    codeArr.forEach((el,index) => {
+        if((index + 1) % 2 === 0){
+            sumEven += parseInt(3 * el)
 
         }
     });
-    console.log("Сумма четных "+sumch)
+    console.log("Сумма четных ", sumEven)
 
-    let final=(sumch+sumnch+cd)%10
-    console.log("Конец "+final)
+    let final=(sumEven + sumOdd + controlNum) % 10
+    console.log("Конец ", final)
 }
 main()
 

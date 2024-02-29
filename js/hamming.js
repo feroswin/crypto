@@ -96,6 +96,11 @@ let encodedData = hammingEncode(originalData);
 console.log('Закодированные данные:', encodedData);
 
 let errorPosition = Number(prompt("Введите позицию ошибки"));
+
+if (errorPosition > encodedData.length) {
+    throw new Error ("Позиция для ошибки выходит за пределы")
+}
+
 let erroneousData = introduceError(encodedData, errorPosition);
 console.log(`Данные с ошибкой в позиции ${errorPosition}:`, erroneousData);
 
