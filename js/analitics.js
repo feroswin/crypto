@@ -12,7 +12,7 @@ function splitIndexCharsMessage(indexCharsMessage , lengthKey) {
     return newarr
 }
 
-let alphabet = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЬЫЪЭЮЯ".toLowerCase()
+let alphabet = "абвгдеёжзийклмнопрстуфхцчшщьыъэюя"
 let lengthKey = +prompt("Введите длину ключа")
 
 let key = []
